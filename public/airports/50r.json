@@ -1,0 +1,676 @@
+{
+  "siteNumberCode": "24231.*a",
+  "icao": null,
+  "iata": null,
+  "faaCode": "50R",
+  "city": "Lockhart",
+  "state": "Texas",
+  "stateCode": "TX",
+  "country": "United States",
+  "countryCode": "US",
+  "name": "Lockhart Municipal",
+  "keywordPrefixes": [
+    "loc",
+    "mun",
+    "sta",
+    "tex",
+    "uni"
+  ],
+  "artccID": "ZHU",
+  "artccName": "Houston",
+  "artccResponsibleID": "ZHU",
+  "artccResponsibleName": "Houston",
+  "flightServiceStationID": "SJT",
+  "flightServiceStationName": "San Angelo",
+  "flightServiceStationPhone": "+1 800-992-7433",
+  "flightServiceStationAlternateID": "",
+  "flightServiceStationAlternateName": null,
+  "flightServiceStationAlternatePhone": "",
+  "flightServiceStationIssuingNotamsID": "SJT",
+  "nearby": [],
+  "latitude": 29.850333023880264,
+  "longitude": -97.67241707813793,
+  "keywords": [
+    "lockhart",
+    "municipal",
+    "states",
+    "texas",
+    "united"
+  ],
+  "airportType": "AIRPORT",
+  "operationalStatus": "OPERATIONAL",
+  "airportAccess": "PU",
+  "latitudeSecsNorth": 107461.1988,
+  "longitudeSecsEast": -351620.7012,
+  "elevation": 532,
+  "magneticVariationWest": -7,
+  "trafficPatternAltitudeMsl": null,
+  "runways": [
+    {
+      "ident": "18-36",
+      "length": 4001,
+      "width": 75,
+      "surfaceType": "ASPH",
+      "surfaceQuality": "F",
+      "edgeLightsIntensity": "Medium",
+      "name": "18",
+      "trueHeading": 182,
+      "magneticHeading": 175,
+      "latitudeBase": 29.855827,
+      "longitudeBase": -97.672196,
+      "approachSlopeSideBase": "LEFT",
+      "approachSlopeIndicatorBase": "P2",
+      "approachLightingSystemBase": "NONE",
+      "rightTrafficBase": false,
+      "rightTrafficRecip": false,
+      "recipTrueHeading": 2,
+      "recipMagneticHeading": 355,
+      "recipName": "36",
+      "latitudeRecip": 29.844831,
+      "longitudeRecip": -97.672628,
+      "approachSlopeSideRecip": "LEFT",
+      "approachSlopeIndicatorRecip": "P2",
+      "approachLightingSystemRecip": "NONE",
+      "displacedThresholdBase": false,
+      "displacedThresholdRecip": false,
+      "gradientBase": -0.2,
+      "gradientRecip": 0.2,
+      "displacedThresholdLengthBase": null,
+      "displacedThresholdLengthRecip": null,
+      "displacedThresholdLatitudeBase": null,
+      "displacedThresholdLatitudeRecip": null,
+      "displacedThresholdLongitudeBase": null,
+      "displacedThresholdLongitudeRecip": null,
+      "elevationRunwayEndBase": 532.0,
+      "elevationRunwayEndRecip": 524.0,
+      "elevationThresholdBase": null,
+      "elevationThresholdRecip": null,
+      "elevationTouchdownZoneBase": 532.0,
+      "elevationTouchdownZoneRecip": 530.0,
+      "glidePathAngleBase": 3.5,
+      "glidePathAngleRecip": 3.0,
+      "ldaFtDayBase": 4001.0,
+      "ldaFtDayRecip": 4001.0,
+      "ldaFtNightBase": 4001.0,
+      "ldaFtNightRecip": 4001.0,
+      "toraFtDayBase": 4001.0,
+      "toraFtDayRecip": 4001.0,
+      "toraFtNightBase": 4001.0,
+      "toraFtNightRecip": 4001.0,
+      "todaFtDayBase": 4001.0,
+      "todaFtDayRecip": 4001.0,
+      "todaFtNightBase": 4001.0,
+      "todaFtNightRecip": 4001.0,
+      "asdaFtDayBase": 4001.0,
+      "asdaFtDayRecip": 4001.0,
+      "asdaFtNightBase": 4001.0,
+      "asdaFtNightRecip": 4001.0,
+      "overrunFtBase": 0.0,
+      "overrunFtRecip": 0.0,
+      "markingsType": null,
+      "markingsCondition": null,
+      "attributes": null,
+      "edgeLightIntensityKnown": true,
+      "edgeLightUserPresentable": "Medium intensity",
+      "approachSlopeIndicatorBaseAvailable": true,
+      "approachSlopeIndicatorRecipAvailable": true,
+      "approachLightingSystemBaseAvailable": false,
+      "approachLightingSystemRecipAvailable": false
+    }
+  ],
+  "frequencies": [
+    {
+      "frequency": 122.8,
+      "name": "CTAF/UNICOM",
+      "phone": null,
+      "sectorDescription": null,
+      "altitudeDescription": null,
+      "description": null,
+      "localFrequency": true
+    },
+    {
+      "frequency": null,
+      "name": "Clearance Delivery",
+      "phone": "(512) 369-7865",
+      "sectorDescription": "Austin Approach",
+      "altitudeDescription": null,
+      "description": null,
+      "localFrequency": true
+    }
+  ],
+  "remoteFrequencies": [
+    {
+      "frequency": 120.875,
+      "name": "Austin Approach",
+      "phone": null,
+      "sectorDescription": null,
+      "altitudeDescription": null,
+      "description": null,
+      "localFrequency": false
+    },
+    {
+      "frequency": 120.875,
+      "name": "Austin Departure",
+      "phone": null,
+      "sectorDescription": null,
+      "altitudeDescription": null,
+      "description": null,
+      "localFrequency": false
+    },
+    {
+      "frequency": 122.55,
+      "name": "Flight Service",
+      "phone": "(800) 992-7433",
+      "sectorDescription": "San Angelo 24H",
+      "altitudeDescription": null,
+      "description": null,
+      "localFrequency": false
+    }
+  ],
+  "procedures": [
+    {
+      "name": "AIRPORT DIAGRAM",
+      "filename": "50R-FF-TaxiDiagram.pdf",
+      "source": "ForeFlight",
+      "type": "APD",
+      "airportIcao": "50R",
+      "associatedRunwayNames": [],
+      "georefPages": [
+        {
+          "filename": "50R-FF-TaxiDiagram.PDF",
+          "pageNumber": 1,
+          "coord1Lat": 29.85755,
+          "coord1Lon": -97.678085,
+          "coord2Lat": 29.843304,
+          "coord2Lon": -97.66499,
+          "p1PctX": 1.0E-5,
+          "p1PctY": 1.001358E-5,
+          "p2PctX": 0.99999,
+          "p2PctY": 0.99999,
+          "orientation": 0.0,
+          "drawTopPct": 0.08,
+          "drawBottomPct": 0.93,
+          "drawLeftPct": 0.0345,
+          "drawRightPct": 0.966,
+          "validWithinX": 0.0,
+          "validWithinY": 0.0,
+          "validWithinRadius": 0.0,
+          "excludedArea": null,
+          "empty": false
+        }
+      ],
+      "changedThisCycle": false,
+      "fileHash": null,
+      "pageCount": 1,
+      "dateLabel": null,
+      "rotation": 0,
+      "lastCycleChanged": null,
+      "georefHash": null,
+      "procuid": null,
+      "cycle": {
+        "version": "2010",
+        "dateUpdated": "2020-09-04T21:51:35.400+0000",
+        "dateEffective": "2020-09-10T09:01:00.000+0000",
+        "dateExpires": "2020-10-08T09:01:00.000+0000"
+      },
+      "procedureUrl": null,
+      "resources": {},
+      "pageRotations": null,
+      "diagram": true,
+      "icaocode": null,
+      "iatacode": null,
+      "aipcode": "50R"
+    },
+    {
+      "name": "RNAV (GPS) RWY 18",
+      "filename": "06919R18.PDF",
+      "source": "FAA",
+      "type": "IAP",
+      "airportIcao": "50R",
+      "associatedRunwayNames": [
+        "18"
+      ],
+      "georefPages": [
+        {
+          "filename": "06919R18.PDF",
+          "pageNumber": 1,
+          "coord1Lat": 29.987032,
+          "coord1Lon": -97.60572,
+          "coord2Lat": 29.702648,
+          "coord2Lon": -97.39386,
+          "p1PctX": 0.4,
+          "p1PctY": 0.40000856,
+          "p2PctX": 0.6,
+          "p2PctY": 0.6000055,
+          "orientation": 0.0,
+          "drawTopPct": 0.213057,
+          "drawBottomPct": 0.67192405,
+          "drawLeftPct": 0.046790104,
+          "drawRightPct": 0.9526559,
+          "validWithinX": 0.0,
+          "validWithinY": 0.0,
+          "validWithinRadius": 0.0,
+          "excludedArea": null,
+          "empty": false
+        }
+      ],
+      "changedThisCycle": false,
+      "fileHash": null,
+      "pageCount": 0,
+      "dateLabel": null,
+      "rotation": 0,
+      "lastCycleChanged": null,
+      "georefHash": null,
+      "procuid": "31192",
+      "cycle": {
+        "version": "2010",
+        "dateUpdated": null,
+        "dateEffective": "2020-09-10T09:01:00.000+0000",
+        "dateExpires": "2020-10-08T09:01:00.000+0000"
+      },
+      "procedureUrl": null,
+      "resources": {},
+      "pageRotations": null,
+      "diagram": false,
+      "icaocode": null,
+      "iatacode": null,
+      "aipcode": "50R"
+    },
+    {
+      "name": "RNAV (GPS) RWY 36",
+      "filename": "06919R36.PDF",
+      "source": "FAA",
+      "type": "IAP",
+      "airportIcao": "50R",
+      "associatedRunwayNames": [
+        "36"
+      ],
+      "georefPages": [
+        {
+          "filename": "06919R36.PDF",
+          "pageNumber": 1,
+          "coord1Lat": 29.799118,
+          "coord1Lon": -97.71777,
+          "coord2Lat": 29.60991,
+          "coord2Lon": -97.57666,
+          "p1PctX": 0.4,
+          "p1PctY": 0.40000856,
+          "p2PctX": 0.6,
+          "p2PctY": 0.6000055,
+          "orientation": 0.0,
+          "drawTopPct": 0.22224645,
+          "drawBottomPct": 0.6688321,
+          "drawLeftPct": 0.046638604,
+          "drawRightPct": 0.95282954,
+          "validWithinX": 0.0,
+          "validWithinY": 0.0,
+          "validWithinRadius": 0.0,
+          "excludedArea": null,
+          "empty": false
+        }
+      ],
+      "changedThisCycle": false,
+      "fileHash": null,
+      "pageCount": 0,
+      "dateLabel": null,
+      "rotation": 0,
+      "lastCycleChanged": null,
+      "georefHash": null,
+      "procuid": "31193",
+      "cycle": {
+        "version": "2010",
+        "dateUpdated": null,
+        "dateEffective": "2020-09-10T09:01:00.000+0000",
+        "dateExpires": "2020-10-08T09:01:00.000+0000"
+      },
+      "procedureUrl": null,
+      "resources": {},
+      "pageRotations": null,
+      "diagram": false,
+      "icaocode": null,
+      "iatacode": null,
+      "aipcode": "50R"
+    },
+    {
+      "name": "TAKEOFF MINIMUMS",
+      "filename": "SC3TO.PDF",
+      "source": "FAA",
+      "type": "MIN",
+      "airportIcao": "50R",
+      "associatedRunwayNames": [],
+      "georefPages": [],
+      "changedThisCycle": false,
+      "fileHash": null,
+      "pageCount": 0,
+      "dateLabel": null,
+      "rotation": 0,
+      "lastCycleChanged": null,
+      "georefHash": null,
+      "procuid": null,
+      "cycle": {
+        "version": "2010",
+        "dateUpdated": null,
+        "dateEffective": "2020-09-10T09:01:00.000+0000",
+        "dateExpires": "2020-10-08T09:01:00.000+0000"
+      },
+      "procedureUrl": null,
+      "resources": {},
+      "pageRotations": null,
+      "diagram": false,
+      "icaocode": null,
+      "iatacode": null,
+      "aipcode": "50R"
+    }
+  ],
+  "fuelTypes": [
+    "GRADE100LL"
+  ],
+  "extraServices": [
+    "INSTR",
+    "RNTL"
+  ],
+  "remarks": [
+    {
+      "remarkText": "This airport has been surveyed by the national geodetic survey."
+    },
+    {
+      "remarkText": "+280 ft lighted water tower 11,000 ft fm runway 36 thld on cntrln."
+    },
+    {
+      "remarkText": "Parallel taxiway has green cntrln reflectors."
+    },
+    {
+      "remarkText": "Wildlife in vicinity of airport."
+    },
+    {
+      "remarkText": "For cd contact austin approach at 512-369-7865."
+    },
+    {
+      "remarkText": "Manager's name: Public works"
+    },
+    {
+      "remarkText": "17 ft tree at thld and 240 ft left."
+    },
+    {
+      "remarkText": "Lighting schedule: Dusk-dawn. mirl runway 18/36 preset low intensity; to incr intensity actvt - CTAF."
+    }
+  ],
+  "serviceProviders": [],
+  "fbos": [],
+  "businesses": [],
+  "trafficPatternAltitudes": [],
+  "sectionalName": "San Antonio",
+  "managersName": null,
+  "managersAddress": null,
+  "managersCityStateZip": null,
+  "managersPhoneNumber": null,
+  "afdFilename": "sc_344_10sep2020_afd.pdf",
+  "diagramAvailable": true,
+  "diagram": {
+    "name": "AIRPORT DIAGRAM",
+    "filename": "50R-FF-TaxiDiagram.pdf",
+    "source": "ForeFlight",
+    "type": "APD",
+    "airportIcao": "50R",
+    "associatedRunwayNames": [],
+    "georefPages": [
+      {
+        "filename": "50R-FF-TaxiDiagram.PDF",
+        "pageNumber": 1,
+        "coord1Lat": 29.85755,
+        "coord1Lon": -97.678085,
+        "coord2Lat": 29.843304,
+        "coord2Lon": -97.66499,
+        "p1PctX": 1.0E-5,
+        "p1PctY": 1.001358E-5,
+        "p2PctX": 0.99999,
+        "p2PctY": 0.99999,
+        "orientation": 0.0,
+        "drawTopPct": 0.08,
+        "drawBottomPct": 0.93,
+        "drawLeftPct": 0.0345,
+        "drawRightPct": 0.966,
+        "validWithinX": 0.0,
+        "validWithinY": 0.0,
+        "validWithinRadius": 0.0,
+        "excludedArea": null,
+        "empty": false
+      }
+    ],
+    "changedThisCycle": false,
+    "fileHash": null,
+    "pageCount": 1,
+    "dateLabel": null,
+    "rotation": 0,
+    "lastCycleChanged": null,
+    "georefHash": null,
+    "procuid": null,
+    "cycle": {
+      "version": "2010",
+      "dateUpdated": "2020-09-04T21:51:35.400+0000",
+      "dateEffective": "2020-09-10T09:01:00.000+0000",
+      "dateExpires": "2020-10-08T09:01:00.000+0000"
+    },
+    "procedureUrl": null,
+    "resources": {},
+    "pageRotations": null,
+    "diagram": true,
+    "icaocode": null,
+    "iatacode": null,
+    "aipcode": "50R"
+  },
+  "notamDServiceAvailable": false,
+  "towered": false,
+  "pdc": false,
+  "contacts": [
+    {
+      "label": "Manager",
+      "name": "Sean Kelley",
+      "organization": null,
+      "note": null,
+      "addresses": [
+        {
+          "label": null,
+          "primary": false,
+          "rel": null,
+          "uri": null,
+          "physicalAddress": null,
+          "country": null,
+          "city": null,
+          "state": null,
+          "postalCode": null,
+          "latitude": null,
+          "longitude": null,
+          "address": [
+            "Po Box 239",
+            "Lockhart, TX 78644"
+          ]
+        }
+      ],
+      "phones": [
+        {
+          "label": "Phone",
+          "phoneNumber": "(512) 398-6452",
+          "primary": true,
+          "rel": null,
+          "uri": null
+        }
+      ]
+    },
+    {
+      "label": "Owner",
+      "name": "City of Lockhart",
+      "organization": null,
+      "note": null,
+      "addresses": [
+        {
+          "label": null,
+          "primary": false,
+          "rel": null,
+          "uri": null,
+          "physicalAddress": null,
+          "country": null,
+          "city": null,
+          "state": null,
+          "postalCode": null,
+          "latitude": null,
+          "longitude": null,
+          "address": [
+            "PO BOX 239",
+            "LOCKHART, TX 78644"
+          ]
+        }
+      ],
+      "phones": [
+        {
+          "label": "Phone",
+          "phoneNumber": "(512) 398-3461",
+          "primary": true,
+          "rel": null,
+          "uri": null
+        }
+      ]
+    },
+    {
+      "label": "Airport",
+      "name": null,
+      "organization": null,
+      "note": null,
+      "addresses": null,
+      "phones": [
+        {
+          "label": "Phone",
+          "phoneNumber": "(512) 376-9608",
+          "primary": false,
+          "rel": null,
+          "uri": null
+        },
+        {
+          "label": "Fax",
+          "phoneNumber": "(512) 398-4575",
+          "primary": false,
+          "rel": null,
+          "uri": null
+        }
+      ]
+    }
+  ],
+  "attributes": [
+    {
+      "label": "Transition Altitude (MSL)",
+      "value": "18000",
+      "description": ""
+    },
+    {
+      "label": "Airport of Entry",
+      "value": "No",
+      "description": null
+    },
+    {
+      "label": "Customs Available",
+      "value": "No",
+      "description": null
+    }
+  ],
+  "schedule": [
+    {
+      "months": "ALL",
+      "days": "ALL",
+      "hours": "0700-1500",
+      "unattended": false,
+      "irregular": false,
+      "value": null
+    }
+  ],
+  "cycle": {
+    "version": "2010",
+    "dateUpdated": "2020-09-04T21:51:35.400+0000",
+    "dateEffective": "2020-09-10T09:01:00.000+0000",
+    "dateExpires": "2020-10-08T09:01:00.000+0000"
+  },
+  "timezone": {
+    "dstOffset": -5.0,
+    "gmtOffset": -6.0,
+    "timezoneId": "America/Chicago"
+  },
+  "source": "{nasr,jeppesen_enroute,jeppesen_primary,jepp_terminal}",
+  "displayName": "null - Lockhart Municipal",
+  "code": "50R",
+  "longestRunway": {
+    "ident": "18-36",
+    "length": 4001,
+    "width": 75,
+    "surfaceType": "ASPH",
+    "surfaceQuality": "F",
+    "edgeLightsIntensity": "Medium",
+    "name": "18",
+    "trueHeading": 182,
+    "magneticHeading": 175,
+    "latitudeBase": 29.855827,
+    "longitudeBase": -97.672196,
+    "approachSlopeSideBase": "LEFT",
+    "approachSlopeIndicatorBase": "P2",
+    "approachLightingSystemBase": "NONE",
+    "rightTrafficBase": false,
+    "rightTrafficRecip": false,
+    "recipTrueHeading": 2,
+    "recipMagneticHeading": 355,
+    "recipName": "36",
+    "latitudeRecip": 29.844831,
+    "longitudeRecip": -97.672628,
+    "approachSlopeSideRecip": "LEFT",
+    "approachSlopeIndicatorRecip": "P2",
+    "approachLightingSystemRecip": "NONE",
+    "displacedThresholdBase": false,
+    "displacedThresholdRecip": false,
+    "gradientBase": -0.2,
+    "gradientRecip": 0.2,
+    "displacedThresholdLengthBase": null,
+    "displacedThresholdLengthRecip": null,
+    "displacedThresholdLatitudeBase": null,
+    "displacedThresholdLatitudeRecip": null,
+    "displacedThresholdLongitudeBase": null,
+    "displacedThresholdLongitudeRecip": null,
+    "elevationRunwayEndBase": 532.0,
+    "elevationRunwayEndRecip": 524.0,
+    "elevationThresholdBase": null,
+    "elevationThresholdRecip": null,
+    "elevationTouchdownZoneBase": 532.0,
+    "elevationTouchdownZoneRecip": 530.0,
+    "glidePathAngleBase": 3.5,
+    "glidePathAngleRecip": 3.0,
+    "ldaFtDayBase": 4001.0,
+    "ldaFtDayRecip": 4001.0,
+    "ldaFtNightBase": 4001.0,
+    "ldaFtNightRecip": 4001.0,
+    "toraFtDayBase": 4001.0,
+    "toraFtDayRecip": 4001.0,
+    "toraFtNightBase": 4001.0,
+    "toraFtNightRecip": 4001.0,
+    "todaFtDayBase": 4001.0,
+    "todaFtDayRecip": 4001.0,
+    "todaFtNightBase": 4001.0,
+    "todaFtNightRecip": 4001.0,
+    "asdaFtDayBase": 4001.0,
+    "asdaFtDayRecip": 4001.0,
+    "asdaFtNightBase": 4001.0,
+    "asdaFtNightRecip": 4001.0,
+    "overrunFtBase": 0.0,
+    "overrunFtRecip": 0.0,
+    "markingsType": null,
+    "markingsCondition": null,
+    "attributes": null,
+    "edgeLightIntensityKnown": true,
+    "edgeLightUserPresentable": "Medium intensity",
+    "approachSlopeIndicatorBaseAvailable": true,
+    "approachSlopeIndicatorRecipAvailable": true,
+    "approachLightingSystemBaseAvailable": false,
+    "approachLightingSystemRecipAvailable": false
+  },
+  "longestRunwayLength": 4001,
+  "procedureTypes": "GPS, RNAV",
+  "latitudeInDegrees": 29.850333023880264,
+  "longitudeInDegrees": -97.67241707813793,
+  "magneticVariationWestOrEstimate": -7,
+  "hardSurfaceAvailable": true
+}
