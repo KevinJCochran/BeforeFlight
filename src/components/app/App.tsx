@@ -4,7 +4,7 @@ import { CssBaseline } from '@material-ui/core';
 
 function App() {
   return (
-    <div className="App">
+    <div>
       <CssBaseline />
       before-flight
     </div>
