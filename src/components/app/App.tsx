@@ -7,10 +7,9 @@ import {
 } from 'react-router-dom';
 import { Provider } from 'react-redux';
 
-import './App.css';
-
-import Home from '../home/Home';
 import TopBar from '../top-bar/TopBar';
+import Home from '../home/Home';
+import AirportDetails from '../airport-details/AirportDetails';
 
 import store from '../../redux/store';
 
@@ -20,6 +19,9 @@ const App = () => (
     <Router>
       <TopBar/>
       <Switch>
+        <Route path='/airport/:icao'>
+          <AirportDetails />
+        </Route>
         <Route path='/'>
           <Home/>
         </Route>
