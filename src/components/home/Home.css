@@ -1,0 +1,9 @@
+.airport-list-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.airport-list-container > div {
+    margin-bottom: 1rem;
+}

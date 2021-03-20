@@ -14,7 +14,7 @@ export interface Airport {
   siteNumberCode: string;
   name: string;
   faaCode: string | null;
-  iaco: string | null;
+  icao: string | null;
   iata: string | null;
   country: string;
   countryCode: string;
