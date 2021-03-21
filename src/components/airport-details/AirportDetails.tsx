@@ -6,7 +6,7 @@ import { useAppDispatch, useAppSelector } from '../../redux/hooks';
 import { fetchAirport, Status } from '../../redux/airportSlice';
 
 import './AirportDetails.css';
-import RunwayCard from '../../runway-card/RunwayCard';
+import RunwayCard from '../runway-card/RunwayCard';
 import { formatLatLong, getFormattedAddress } from '../../util/airportUtils';
 
 const useStyles = makeStyles(() => createStyles({
