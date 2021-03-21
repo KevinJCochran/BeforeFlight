@@ -22,10 +22,10 @@ const initialState: WeatherState = {
 };
 
 export const fetchWeather = createAsyncThunk('airport/fetchWeather', async (icao: string) => {
-  const weatherReport = await api.getWeather(icao);
+  const weather = await api.getWeather(icao);
   return {
     code: icao,
-    report: weatherReport,
+    report: weather.report,
   };
 });
 

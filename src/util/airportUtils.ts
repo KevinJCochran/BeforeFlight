@@ -1,4 +1,5 @@
 import { Airport } from '../types/airportTypes';
+import { Wind } from '../types/weatherTypes';
 
 export const formatLatLong = (lat: number, long: number): string => {
   const latHemisphere = lat > 0 ? 'N' : 'S';
@@ -11,4 +12,7 @@ export const formatLatLong = (lat: number, long: number): string => {
 };
 
 export const getFormattedAddress = (airport: Airport): string =>
-  `${airport.city}, ${airport.state}, ${airport.countryCode}`
+  `${airport.city}, ${airport.state}, ${airport.countryCode}`;
+
+export const getFormattedWinds = (wind: Wind): string =>
+  `${wind.direction}\xB0 @ ${wind.from}KTS`;

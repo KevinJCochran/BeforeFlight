@@ -7,7 +7,8 @@ import { fetchAirport, Status } from '../../redux/airportSlice';
 
 import './AirportDetails.css';
 import RunwayCard from '../runway-card/RunwayCard';
-import { formatLatLong, getFormattedAddress } from '../../util/airportUtils';
+import { formatLatLong, getFormattedAddress, getFormattedWinds } from '../../util/airportUtils';
+import { fetchWeather } from '../../redux/weatherSlice';
 
 const useStyles = makeStyles(() => createStyles({
   dividerRoot: {
@@ -24,17 +25,31 @@ const AirportDetails = (): React.ReactElement => {
   const airport = useAppSelector(state => state.airports.map[icao]);
   const airportStatus = useAppSelector(state => state.airports.status);
 
-  useEffect(() => {
-    if (airport === undefined) {
-      dispatch(fetchAirport(icao));
-    }
-  }, [airport, icao, dispatch]);
+  const weather = useAppSelector(state => state.weather.map[icao]);
+  const weatherStatus = useAppSelector(state => state.weather.status);
 
-  if (airportStatus === Status.loading || airport === undefined)
+  useEffect(() => {
+    if (airport === undefined)
+      dispatch(fetchAirport(icao));
+    if (weather === undefined)
+      dispatch(fetchWeather(icao));
+  }, [airport, weather, icao, dispatch]);
+
+  const dataLoading = () =>
+    airportStatus === Status.loading ||
+    airport === undefined ||
+    weatherStatus === Status.loading ||
+    weather === undefined;
+
+  // TODO Failed to load state
+
+  if (dataLoading() || weather.conditions === undefined)
     return <Typography variant='h2'>Loading...</Typography>;
 
   return (
     <PageContainer>
+
+      {/* Header */}
       <header className='airport-details-header'>
         <div>
           <Typography variant='h3'>
@@ -54,12 +69,28 @@ const AirportDetails = (): React.ReactElement => {
         </div>
       </header>
       <Divider className={classes.dividerRoot} />
+
+      {/* Runways */}
       <Typography variant='h6'>Available runways</Typography>
       <div className='available-runways-cards'>
         { airport.runways.map(rwy => <RunwayCard key={rwy.ident} {...rwy} />) }
       </div>
       <Divider className={classes.dividerRoot} />
+
+      {/* Weather conditions */}
       <Typography variant='h6'>Current weather conditions</Typography>
+      <Typography variant='body1' paragraph>
+        Wind: {getFormattedWinds(weather.conditions.wind)}
+      </Typography>
+      <Typography variant='body1' paragraph>
+        Visibility: {weather.conditions.visibility.distanceSm} SM
+      </Typography>
+      <Typography variant='body1' paragraph>
+        Temperature: {weather.conditions.tempC}&#730;C (dewpoint: {weather.conditions.dewpointC}&#730;C)
+      </Typography>
+      <Typography variant='body1' paragraph>
+        Humidity: {weather.conditions.relativeHumidity}%
+      </Typography>
     </PageContainer>
   );
 };
