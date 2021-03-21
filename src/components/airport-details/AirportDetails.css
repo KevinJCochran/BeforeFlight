@@ -2,11 +2,13 @@
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
+    flex-wrap: wrap;
 }
 
 .available-runways-cards {
     display: flex;
-    margin-top: 1rem;
+    flex-wrap: wrap;
+    margin: 1rem 0;
 }
 
 .available-runways-cards > div {

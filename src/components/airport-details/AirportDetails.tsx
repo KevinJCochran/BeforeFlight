@@ -54,10 +54,12 @@ const AirportDetails = (): React.ReactElement => {
         </div>
       </header>
       <Divider className={classes.dividerRoot} />
-      <Typography variant='h6'>Available runways:</Typography>
+      <Typography variant='h6'>Available runways</Typography>
       <div className='available-runways-cards'>
         { airport.runways.map(rwy => <RunwayCard key={rwy.ident} {...rwy} />) }
       </div>
+      <Divider className={classes.dividerRoot} />
+      <Typography variant='h6'>Current weather conditions</Typography>
     </PageContainer>
   );
 };
