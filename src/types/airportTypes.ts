@@ -1,7 +1,7 @@
 export interface Runway {
   ident: string;
-  length: string;
-  width: string;
+  length: number;
+  width: number;
   name: string;
   recipName: string;
   trueHeading: number;
@@ -11,11 +11,17 @@ export interface Runway {
 }
 
 export interface Airport {
-  siteNumberCode: string;
+  code: string;
   name: string;
   faaCode: string | null;
   icao: string | null;
   iata: string | null;
+  city: string;
+  state: string;
+  stateCode: string;
   country: string;
   countryCode: string;
+  latitude: number;
+  longitude: number;
+  runways: Runway[];
 }

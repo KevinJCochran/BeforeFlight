@@ -17,7 +17,7 @@ const useStyles = makeStyles(() => createStyles({
 function Home() {
   const classes = useStyles();
 
-  const airports = useAppSelector(state => Object.values(state.airports.airports));
+  const airports = useAppSelector(state => Object.values(state.airports.map));
   const airportsStatus = useAppSelector(state => state.airports.status);
   const dispatch = useAppDispatch();
 
@@ -30,7 +30,7 @@ function Home() {
   const renderList = () => {
     return airports.map(a => {
       const code = a.icao || a.iata || a.faaCode || a.name;
-      return <AirportCard key={a.siteNumberCode} name={a.name} code={code}/>;
+      return <AirportCard key={a.code} name={a.name} code={code}/>;
     });
   };
 

@@ -1,4 +1,4 @@
-import { Airport } from "../types";
+import { Airport } from '../types/airportTypes';
 
 async function get<T>(path: string): Promise<T> {
   const res = await fetch(path);
@@ -12,6 +12,6 @@ async function get<T>(path: string): Promise<T> {
 const api = {
   getAirportList: () => get<Airport[]>('/airports/index.json'),
   getAirport: (icaoCode: string) => get<Airport>(`/airports/${icaoCode}.json`),
-}
+};
 
 export default api;

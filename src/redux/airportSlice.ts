@@ -1,5 +1,5 @@
 import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { Airport } from '../types';
+import { Airport } from '../types/airportTypes';
 import api from '../api/aeronauticalAPI';
 
 export enum Status {
@@ -10,14 +10,14 @@ export enum Status {
 
 interface AirportState {
   status: Status,
-  airports: {
+  map: {
     [id: string]: Airport,
   }
 }
 
 const initialState: AirportState = {
   status: Status.successful,
-  airports: {},
+  map: {},
 };
 
 export const fetchAirport = createAsyncThunk('airport/fetchAirport', api.getAirport);
@@ -28,18 +28,15 @@ export const airportSlice = createSlice({
   initialState,
   reducers: {
     pushAirport: (state, { payload: airport }: PayloadAction<Airport>) => {
-      state.airports[airport.siteNumberCode] = airport;
-    },
-    pushAllAirports: (state, { payload: airports }: PayloadAction<Airport[]>) => {
-      airports.forEach(airport => state.airports[airport.siteNumberCode] = airport);
+      state.map[airport.code] = airport;
     },
   },
   extraReducers: builder => {
     builder.addCase(fetchAirport.pending, state => {
       state.status = Status.loading;
     });
-    builder.addCase(fetchAirport.fulfilled, (state, action) => {
-      state.airports[action.payload.siteNumberCode] = action.payload;
+    builder.addCase(fetchAirport.fulfilled, (state, { payload: airport }) => {
+      state.map[airport.code] = airport;
       state.status = Status.successful;
     });
     builder.addCase(fetchAirport.rejected, state => {
@@ -50,7 +47,7 @@ export const airportSlice = createSlice({
       state.status = Status.loading;
     });
     builder.addCase(fetchAirportList.fulfilled, (state, { payload: airports }) => {
-      airports.forEach((a) => state.airports[a.siteNumberCode] = a);
+      airports.forEach((a) => state.map[a.code] = a);
       state.status = Status.successful;
     });
     builder.addCase(fetchAirportList.rejected, state => {
@@ -59,4 +56,4 @@ export const airportSlice = createSlice({
   },
 });
 
-export const { pushAirport, pushAllAirports } = airportSlice.actions;
+export const { pushAirport } = airportSlice.actions;

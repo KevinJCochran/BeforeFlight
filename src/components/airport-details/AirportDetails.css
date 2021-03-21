@@ -1,0 +1,14 @@
+.airport-details-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.available-runways-cards {
+    display: flex;
+    margin-top: 1rem;
+}
+
+.available-runways-cards > div {
+    margin-right: 8px;
+}

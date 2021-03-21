@@ -1,5 +1,6 @@
 import React from 'react';
-import { Card, CardContent, makeStyles, Typography } from '@material-ui/core';
+import { Button, Card, CardActions, CardContent, makeStyles, Typography } from '@material-ui/core';
+import { Link } from 'react-router-dom';
 
 interface Props {
   name: string,
@@ -21,6 +22,11 @@ function AirportCard(props: Props): React.ReactElement {
         <Typography variant='h5'>{props.code}</Typography>
         <Typography variant='subtitle1' color='textSecondary'>{props.name}</Typography>
       </CardContent>
+      <CardActions>
+        <Link to={`/airport/${props.code}`}>
+          <Button size="small">More info</Button>
+        </Link>
+      </CardActions>
     </Card>
   );
 }
