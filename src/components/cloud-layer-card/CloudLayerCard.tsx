@@ -14,6 +14,7 @@ const useStyles = makeStyles({
   }
 });
 
+/* Simple card that abstracts away rendering details of a cloud layer */
 export const CloudLayerCard = (props: Props): React.ReactElement => {
   const classes = useStyles();
 

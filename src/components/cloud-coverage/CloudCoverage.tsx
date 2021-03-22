@@ -12,9 +12,14 @@ interface Props {
   cloudLayers?: CloudLayer[],
 }
 
+/*
+* CloudCoverageSummary handles the logic of how to render
+* cloud coverage over an airport.
+*/
 const CloudCoverageSummary = (props: Props): React.ReactElement => {
   const [greatestLayer, setGreatestLayer] = useState<CloudCoverage>('clr');
 
+  // Compute the greatest cloud coverage only if the props change
   useEffect(() => {
     if (props.cloudLayers === undefined) {
       setGreatestLayer('clr');
@@ -26,6 +31,7 @@ const CloudCoverageSummary = (props: Props): React.ReactElement => {
     }
   }, [props.cloudLayers]);
 
+  // Show message if props are undefined (usually because weather conditions are unavailable)
   if (props.cloudLayers === undefined)
     return (
       <Typography variant='h6'>

@@ -20,6 +20,7 @@ const initialState: AirportState = {
   map: {},
 };
 
+// Async actions
 export const fetchAirport = createAsyncThunk('airport/fetchAirport', api.getAirport);
 export const fetchAirportList = createAsyncThunk('airport/fetchAirportList', api.getAirportList);
 
@@ -27,11 +28,13 @@ export const airportSlice = createSlice({
   name: 'airport',
   initialState,
   reducers: {
+    // This reducer is not currently in use but is provided for future needs
     pushAirport: (state, { payload: airport }: PayloadAction<Airport>) => {
       state.map[airport.code] = airport;
     },
   },
   extraReducers: builder => {
+    // fetchAirport actions
     builder.addCase(fetchAirport.pending, state => {
       state.status = Status.loading;
     });
@@ -43,6 +46,7 @@ export const airportSlice = createSlice({
       state.status = Status.failed;
     });
 
+    // fetchAirportList actions
     builder.addCase(fetchAirportList.pending, state => {
       state.status = Status.loading;
     });

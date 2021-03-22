@@ -13,6 +13,10 @@ const useStyles = makeStyles(theme => ({
   offset: theme.mixins.toolbar,
 }))
 
+/*
+* TopBar renders the top navigation bar which contains the search input.
+* It handles changing the URL on search.
+*/
 const TopBar = (): ReactElement => {
   const classes = useStyles();
 

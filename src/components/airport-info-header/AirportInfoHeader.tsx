@@ -9,6 +9,10 @@ interface Props {
   airport: Airport,
 }
 
+/*
+* AirportInfoHeader was created because the header is large and
+* would clutter other components
+*/
 const AirportInfoHeader = (props: Props): React.ReactElement => (
   <header className='airport-info-header'>
     <div>

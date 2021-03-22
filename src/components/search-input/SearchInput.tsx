@@ -6,6 +6,11 @@ interface Props {
   onSubmit: (value: string) => void,
 }
 
+/*
+* I was on the fence about using CSS-in-JS, however
+* it does provide an easy way to maintain a theme without
+* using SASS or CSS variables. Overall, I'd say I'm a fan.
+*/
 const useStyles = makeStyles(theme => ({
   search: {
     position: 'relative',
@@ -45,6 +50,10 @@ const useStyles = makeStyles(theme => ({
   },
 }))
 
+/*
+* SearchInput renders a search input meant for the top bar of
+* the app. It only listens for form submission.
+*/
 const SearchInput = (props: Props) => {
   const classes = useStyles();
   const [value, setValue] = useState('');
@@ -53,6 +62,7 @@ const SearchInput = (props: Props) => {
     <form
       className={classes.search}
       onSubmit={(e) => {
+        // Important to prevent page reload!
         e.preventDefault();
         props.onSubmit(value);
       }}

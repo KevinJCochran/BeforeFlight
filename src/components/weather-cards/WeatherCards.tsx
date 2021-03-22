@@ -41,6 +41,10 @@ const useStyles = makeStyles({
   }
 });
 
+/*
+* This module contains many different cards that all follow a similar design.
+* BaseCard is provided to avoid rewriting cards that all look the same.
+ */
 const BaseCard = (props: BaseCardProps): React.ReactElement => {
   const classes = useStyles();
   return (

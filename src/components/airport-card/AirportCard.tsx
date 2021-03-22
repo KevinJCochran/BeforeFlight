@@ -13,6 +13,7 @@ const useStyles = makeStyles({
   }
 });
 
+/* AirportCard renders a simple card with a link to the provided airport */
 function AirportCard(props: Props): React.ReactElement {
   const classes = useStyles();
 

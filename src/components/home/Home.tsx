@@ -14,6 +14,10 @@ const useStyles = makeStyles(() => createStyles({
   }
 }));
 
+/*
+* Home is a component that loads all airports for easier
+* navigation through the app.
+*/
 function Home() {
   const classes = useStyles();
 
@@ -21,6 +25,7 @@ function Home() {
   const airportsStatus = useAppSelector(state => state.airports.status);
   const dispatch = useAppDispatch();
 
+  // This hook ensures that airports are only loaded on mount
   useEffect(() => {
     if (airports.length === 0 && airportsStatus === Status.successful) {
       dispatch(fetchAirportList());
@@ -28,10 +33,7 @@ function Home() {
   }, [airports, airportsStatus, dispatch]);
 
   const renderList = () => {
-    return airports.map(a => {
-      const code = a.icao || a.iata || a.faaCode || a.name;
-      return <AirportCard key={a.code} name={a.name} code={code}/>;
-    });
+    return airports.map(a => <AirportCard key={a.code} name={a.name} code={a.code}/>);
   };
 
   return (

@@ -9,6 +9,10 @@ interface Props {
   conditions?: Conditions,
 }
 
+/*
+* WeatherConditions renders weather cards or a message if conditions are
+* unavailable. Broken out into it's own component to keep clutter down
+*/
 const WeatherConditions = (props: Props): React.ReactElement => {
   if (props.conditions === undefined)
     return (

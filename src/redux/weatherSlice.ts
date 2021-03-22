@@ -2,7 +2,6 @@ import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { WeatherReport } from '../types/weatherTypes';
 import api from '../api/aeronauticalAPI';
 
-// TODO put this somewhere better
 export enum Status {
   loading = 'loading',
   successful = 'successful',
@@ -21,6 +20,7 @@ const initialState: WeatherState = {
   map: {},
 };
 
+// Async actions
 export const fetchWeather = createAsyncThunk('airport/fetchWeather', async (icao: string) => {
   const weather = await api.getWeather(icao);
   return {
