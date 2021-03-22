@@ -34,7 +34,7 @@ const CloudCoverageSummary = (props: Props): React.ReactElement => {
   // Show message if props are undefined (usually because weather conditions are unavailable)
   if (props.cloudLayers === undefined)
     return (
-      <Typography variant='h6'>
+      <Typography variant='h6' color='error'>
         Cloud coverage unavailable for this airport
       </Typography>
     );
@@ -46,6 +46,7 @@ const CloudCoverageSummary = (props: Props): React.ReactElement => {
       </Typography>
       <div className='cloud-coverage-cards'>
         {
+          // Don't display clear skies as a cloud layer
           greatestLayer !== 'clr' &&
           props.cloudLayers.map(c => <CloudLayerCard key={c.altitudeFt} {...c}/>)
         }

@@ -27,7 +27,7 @@ function Home() {
 
   // This hook ensures that airports are only loaded on mount
   useEffect(() => {
-    if (airports.length === 0 && airportsStatus === Status.successful) {
+    if (airports.length < 4 && airportsStatus === Status.successful) {
       dispatch(fetchAirportList());
     }
   }, [airports, airportsStatus, dispatch]);

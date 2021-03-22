@@ -16,8 +16,8 @@ interface Props {
 const WeatherConditions = (props: Props): React.ReactElement => {
   if (props.conditions === undefined)
     return (
-      <Typography variant='h6'>
-        Current conditions unavailable for this location
+      <Typography variant='h6' color='error'>
+        Current conditions unavailable for this aiport
       </Typography>
     )
 
