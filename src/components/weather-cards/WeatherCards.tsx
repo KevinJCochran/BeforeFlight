@@ -27,8 +27,8 @@ interface VisibilityCardProps {
 }
 
 interface TemperatureCardProps {
-  tempC: number;
-  dewpointC: number;
+  tempC?: number;
+  dewpointC?: number;
 }
 
 interface HumidityCardProps {
@@ -76,19 +76,36 @@ export const VisibilityCard = (props: VisibilityCardProps): React.ReactElement =
   </BaseCard>
 );
 
-export const TemperatureCard = (props: TemperatureCardProps): React.ReactElement => (
-  <BaseCard title='Temperature' icon={<HotTubIcon/>}>
-    <Typography variant='h3' display='inline'>
-      {props.tempC}
-    </Typography>
-    <Typography variant='subtitle1' display='inline'>
-      &#730;C
-    </Typography>
-    <Typography variant='subtitle1'>
-      Dewpoint: {props.dewpointC}&#730;C
-    </Typography>
-  </BaseCard>
-);
+export const TemperatureCard = (props: TemperatureCardProps): React.ReactElement => {
+  let content;
+
+  if (props.tempC === undefined) {
+    content = (
+      <Typography variant='h6'>
+        Unknown
+      </Typography>
+    )
+  } else {
+    content = (
+      <>
+        <Typography variant='h3' display='inline'>
+          {props.tempC}
+        </Typography>
+        <Typography variant='subtitle1' display='inline'>
+          &#730;C
+        </Typography>
+        <Typography variant='subtitle1'>
+          Dewpoint: {props.dewpointC}&#730;C
+        </Typography>
+      </>
+    )
+  }
+  return (
+    <BaseCard title='Temperature' icon={<HotTubIcon/>}>
+      {content}
+    </BaseCard>
+  );
+};
 
 export const HumidityCard = (props: HumidityCardProps): React.ReactElement => (
   <BaseCard title='Humidity' icon={<InvertColorsIcon/>}>

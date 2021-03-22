@@ -1,14 +1,16 @@
 import React from 'react';
-import { Airport } from '../types/airportTypes';
+import { Airport } from '../../types/airportTypes';
 import { Typography } from '@material-ui/core';
-import { formatLatLong, getFormattedAddress } from '../util/airportUtils';
+import { formatLatLong, getFormattedAddress } from '../../util/airportUtils';
+
+import './AirportInfoHeader.css';
 
 interface Props {
   airport: Airport,
 }
 
 const AirportInfoHeader = (props: Props): React.ReactElement => (
-  <header className='airport-details-header'>
+  <header className='airport-info-header'>
     <div>
       <Typography variant='h3'>
         {props.airport.code}

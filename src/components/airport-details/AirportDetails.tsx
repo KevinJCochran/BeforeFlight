@@ -1,17 +1,17 @@
 import React, { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import PageContainer from '../page-container/PageContainer';
 import { createStyles, Divider, makeStyles, Typography } from '@material-ui/core';
 import { useAppDispatch, useAppSelector } from '../../redux/hooks';
 import { fetchAirport, Status } from '../../redux/airportSlice';
+import { fetchWeather } from '../../redux/weatherSlice';
+
+import PageContainer from '../page-container/PageContainer';
+import RunwayCard from '../runway-card/RunwayCard';
+import AirportInfoHeader from '../airport-info-header/AirportInfoHeader';
+import WeatherConditions from '../weather-conditions/WeatherConditions';
+import CloudCoverage from '../cloud-coverage/CloudCoverage';
 
 import './AirportDetails.css';
-import RunwayCard from '../runway-card/RunwayCard';
-import { cloudLayers } from '../../util/airportUtils';
-import { fetchWeather } from '../../redux/weatherSlice';
-import { HumidityCard, TemperatureCard, VisibilityCard, WindCard } from '../weather-cards/WeatherCards';
-import CloudLayerCard from '../cloud-layer-card/CloudLayerCard';
-import AirportInfoHeader from '../../airport-info-header/AirportInfoHeader';
 
 const useStyles = makeStyles(() => createStyles({
   dividerRoot: {
@@ -48,15 +48,6 @@ const AirportDetails = (): React.ReactElement => {
     weatherStatus === Status.loading ||
     weather === undefined;
 
-  const getGreatestCloudLayer = () => {
-    if (weather.conditions === undefined)
-      return 'Weather conditions unavailable';
-    const { layer } = weather.conditions.cloudLayers
-      .map(layer => ({ layer: layer.coverage, size: cloudLayers[layer.coverage] }))
-      .reduce((prevGreatest, currentLayer) => currentLayer.size > prevGreatest.size ? currentLayer : prevGreatest);
-    return layer === 'clr' ? 'Sky clear' : layer;
-  };
-
   let content;
 
   if (airportStatus === Status.failed) {
@@ -65,7 +56,7 @@ const AirportDetails = (): React.ReactElement => {
         No data available for this airport
       </Typography>
     );
-  } else if (dataLoading() || weather.conditions === undefined) {
+  } else if (dataLoading()) {
     content = (
       <Typography variant='h2'>
         Loading...
@@ -74,33 +65,21 @@ const AirportDetails = (): React.ReactElement => {
   } else {
     content = (
       <>
-        {/* Header */}
         <AirportInfoHeader airport={airport} />
         <Divider className={classes.dividerRoot}/>
 
-        {/* Runways */}
-        <Typography variant='h6'>Available runways</Typography>
-        <div className='airport-details-cards'>
+        <Typography variant='h6'>Available Runways</Typography>
+        <div className='available-runways-cards'>
           {airport.runways.map(rwy => <RunwayCard key={rwy.ident} {...rwy} />)}
         </div>
         <Divider className={classes.dividerRoot}/>
 
-        {/* Weather conditions */}
-        <Typography variant='h6'>Current conditions</Typography>
-        <div className='airport-details-cards'>
-          <WindCard {...weather.conditions.wind} />
-          <VisibilityCard {...weather.conditions.visibility} />
-          <TemperatureCard tempC={weather.conditions.tempC} dewpointC={weather.conditions.dewpointC}/>
-          <HumidityCard relativeHumidity={weather.conditions.relativeHumidity}/>
-        </div>
+        <Typography variant='h6'>Current Conditions</Typography>
+        <WeatherConditions conditions={weather.conditions} />
         <Divider className={classes.dividerRoot}/>
 
-        {/* Cloud coverage */}
-        <Typography variant='h6'>Cloud coverage</Typography>
-        <Typography variant='body1'>Greatest coverage: {getGreatestCloudLayer()}</Typography>
-        <div className='airport-details-cards'>
-          {weather.conditions.cloudLayers.map(c => <CloudLayerCard key={c.altitudeFt} {...c}/>)}
-        </div>
+        <Typography variant='h6'>Cloud Layers</Typography>
+        <CloudCoverage cloudLayers={weather.conditions?.cloudLayers} />
       </>
     );
   }

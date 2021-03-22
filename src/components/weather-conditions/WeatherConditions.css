@@ -1,10 +1,10 @@
-.available-runways-cards {
+.weather-conditions-cards {
     display: flex;
     flex-wrap: wrap;
     margin: 1rem 0;
 }
 
-.available-runways-cards > div {
+.weather-conditions-cards > div {
     margin-right: 8px;
     margin-bottom: 8px;
 }

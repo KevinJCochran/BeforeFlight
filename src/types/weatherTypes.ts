@@ -19,21 +19,23 @@ export interface CloudLayer {
   ceiling: boolean;
 }
 
+export interface Conditions {
+  ident: string;
+  dateIssued: string;
+  lat: number;
+  lon: number;
+  elevationFt: number;
+  tempC: number;
+  dewpointC: number;
+  pressureHg: number;
+  densityAltitudeFt: number;
+  relativeHumidity: number;
+  flightRules: FlightRules;
+  cloudLayers: CloudLayer[];
+  wind: Wind;
+  visibility: Visibility;
+}
+
 export interface WeatherReport {
-  conditions?: {
-    ident: string;
-    dateIssued: string;
-    lat: number;
-    lon: number;
-    elevationFt: number;
-    tempC: number;
-    dewpointC: number;
-    pressureHg: number;
-    densityAltitudeFt: number;
-    relativeHumidity: number;
-    flightRules: FlightRules;
-    cloudLayers: CloudLayer[];
-    wind: Wind;
-    visibility: Visibility;
-  }
+  conditions?: Conditions;
 }
