@@ -20,7 +20,8 @@ const AirportDetails = (): React.ReactElement => {
   const classes = useStyles();
 
   const dispatch = useAppDispatch();
-  const { icao } = useParams<{ icao: string }>();
+  const urlParams = useParams<{ icao: string }>();
+  const icao = urlParams.icao.toUpperCase();
 
   const airport = useAppSelector(state => state.airports.map[icao]);
   const airportStatus = useAppSelector(state => state.airports.status);
@@ -31,9 +32,12 @@ const AirportDetails = (): React.ReactElement => {
   useEffect(() => {
     if (airport === undefined)
       dispatch(fetchAirport(icao));
+  }, [airport, icao, dispatch]);
+
+  useEffect(() => {
     if (weather === undefined)
       dispatch(fetchWeather(icao));
-  }, [airport, weather, icao, dispatch]);
+  }, [weather, icao, dispatch])
 
   const dataLoading = () =>
     airportStatus === Status.loading ||

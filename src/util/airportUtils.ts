@@ -15,4 +15,4 @@ export const getFormattedAddress = (airport: Airport): string =>
   `${airport.city}, ${airport.state}, ${airport.countryCode}`;
 
 export const getFormattedWinds = (wind: Wind): string =>
-  `${wind.direction}\xB0 @ ${wind.from}KTS`;
+  `${wind.direction}\xB0 @ ${wind.speedKts} KTS`;

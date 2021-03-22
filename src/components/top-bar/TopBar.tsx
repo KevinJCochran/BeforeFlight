@@ -1,20 +1,35 @@
 import React, { ReactElement } from 'react';
-import { AppBar, Toolbar, Typography } from '@material-ui/core';
-import { makeStyles } from '@material-ui/core';
+import {
+  AppBar,
+  Toolbar,
+  Typography,
+  makeStyles,
+} from '@material-ui/core';
+import SearchInput from '../search-input/SearchInput';
+import { useHistory } from 'react-router-dom';
 
-// This will make sure nothing is hidden under the Top Bar
 const useStyles = makeStyles(theme => ({
+  // offset will make sure nothing is hidden under the Top Bar
   offset: theme.mixins.toolbar,
 }))
 
 const TopBar = (): ReactElement => {
   const classes = useStyles();
 
+  const history = useHistory();
+
+  const handleSearchSubmit = (value: string) => {
+    history.push(`/airport/${value}`)
+  }
+
   return (
     <>
       <AppBar>
         <Toolbar>
-          <Typography variant='h6'>BeforeFlight</Typography>
+          <Typography variant='h6'>
+            BeforeFlight
+          </Typography>
+          <SearchInput onSubmit={handleSearchSubmit} />
         </Toolbar>
       </AppBar>
       {/* Create padding to push content down below Top Bar */}

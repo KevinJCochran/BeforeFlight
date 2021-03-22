@@ -13,7 +13,7 @@ async function get<T>(path: string): Promise<T> {
 
 const api = {
   getAirportList: () => get<Airport[]>('/airports/index.json'),
-  getAirport: (icaoCode: string) => get<Airport>(`/airports/${icaoCode}.json`),
+  getAirport: (icaoCode: string) => get<Airport>(`/airports/${icaoCode.toUpperCase()}.json`),
   getWeather: (icaoCode: string) => get<{ report: WeatherReport }>(`/weather/${icaoCode}.json`)
 };
 
