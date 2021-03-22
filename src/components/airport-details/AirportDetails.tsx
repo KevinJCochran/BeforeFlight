@@ -56,28 +56,22 @@ const AirportDetails = (): React.ReactElement => {
       dispatch(fetchWeather(icao));
   }, [weather, icao, dispatch]);
 
-  const dataLoading = () =>
-    airportStatus === Status.loading ||
-    airport === undefined ||
-    weatherStatus === Status.loading ||
-    weather === undefined;
-
   let content;
 
-  // Render based on redux state
-  if (airportStatus === Status.failed) {
+  // Set content based on redux state
+  if (airportStatus === Status.failed && airport === undefined) {
     content = (
       <Typography variant='h4' align='center'>
         No data available for this airport
       </Typography>
     );
-  } else if (dataLoading()) {
+  } else if (airportStatus === Status.loading || weatherStatus === Status.loading) {
     content = (
       <Typography variant='h2'>
         Loading...
       </Typography>
     );
-  } else {
+  } else if (airport !== undefined && weather !== undefined) {
     content = (
       <>
         <AirportInfoHeader airport={airport} />
