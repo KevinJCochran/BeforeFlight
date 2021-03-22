@@ -7,7 +7,7 @@ import { fetchAirport, Status } from '../../redux/airportSlice';
 
 import './AirportDetails.css';
 import RunwayCard from '../runway-card/RunwayCard';
-import { formatLatLong, getFormattedAddress } from '../../util/airportUtils';
+import { cloudLayers, formatLatLong, getFormattedAddress } from '../../util/airportUtils';
 import { fetchWeather } from '../../redux/weatherSlice';
 import { HumidityCard, TemperatureCard, VisibilityCard, WindCard } from '../weather-cards/WeatherCards';
 import CloudLayerCard from '../cloud-layer-card/CloudLayerCard';
@@ -46,6 +46,15 @@ const AirportDetails = (): React.ReactElement => {
     airport === undefined ||
     weatherStatus === Status.loading ||
     weather === undefined;
+
+  const getGreatestCloudLayer = () => {
+    if (weather.conditions === undefined)
+      return 'Weather conditions unavailable';
+    const { layer } = weather.conditions.cloudLayers
+      .map(layer => ({ layer: layer.coverage, size: cloudLayers[layer.coverage] }))
+      .reduce((prevGreatest, currentLayer) => currentLayer.size > prevGreatest.size ? currentLayer : prevGreatest);
+    return layer === 'clr' ? 'Sky clear' : layer;
+  }
 
   // TODO Failed to load state
 
@@ -94,6 +103,7 @@ const AirportDetails = (): React.ReactElement => {
 
       {/* Cloud coverage */}
       <Typography variant='h6'>Cloud coverage</Typography>
+      <Typography variant='body1'>Greatest coverage: {getGreatestCloudLayer()}</Typography>
       <div className='airport-details-cards'>
         {weather.conditions.cloudLayers.map(c => <CloudLayerCard key={c.altitudeFt} {...c}/>)}
       </div>
