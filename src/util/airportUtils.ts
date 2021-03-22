@@ -18,14 +18,14 @@ export const cardinalDirections = {
   NW: 315,
   NNW: 337.5,
   N: 360,
-}
+};
 
 export const cloudLayers: { [layer in CloudCoverage]: number } = {
   clr: 0,
   few: 1,
   skc: 2,
   ovc: 4,
-}
+};
 
 export const formatLatLong = (lat: number, long: number): string => {
   const latHemisphere = lat > 0 ? 'N' : 'S';
@@ -48,4 +48,4 @@ export const nearestCardinalDir = (heading: number): string => {
     .map(([dir, value]) => ({ dir, val: Math.abs(heading - value) }))
     .reduce((currentMin, nextVal) => nextVal.val < currentMin.val ? nextVal : currentMin);
   return dir;
-}
+};

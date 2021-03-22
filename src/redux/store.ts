@@ -7,7 +7,7 @@ const store = configureStore({
     airports: airportSlice.reducer,
     weather: weatherSlice.reducer,
   }
-})
+});
 
 // Provide types for the Redux store
 export type RootState = ReturnType<typeof store.getState>;

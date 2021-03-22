@@ -32,6 +32,6 @@ const AirportInfoHeader = (props: Props): React.ReactElement => (
       </Typography>
     </div>
   </header>
-)
+);
 
 export default AirportInfoHeader;

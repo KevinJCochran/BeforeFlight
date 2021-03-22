@@ -23,10 +23,10 @@ function PageContainer(props: Props): React.ReactElement {
   return (
     <Container>
       <Paper elevation={0} className={classes.paperRoot}>
-        { props.children }
+        {props.children}
       </Paper>
     </Container>
-  )
+  );
 }
 
 export default PageContainer;

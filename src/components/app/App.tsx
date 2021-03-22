@@ -30,7 +30,7 @@ const App = () => (
       <TopBar/>
       <Switch>
         <Route path='/airport/:icao'>
-          <AirportDetails />
+          <AirportDetails/>
         </Route>
         <Route path='/'>
           <Home/>

@@ -19,7 +19,7 @@ const WeatherConditions = (props: Props): React.ReactElement => {
       <Typography variant='h6' color='error'>
         Current conditions unavailable for this aiport
       </Typography>
-    )
+    );
 
   return (
     <div className='weather-conditions-cards'>
@@ -28,7 +28,7 @@ const WeatherConditions = (props: Props): React.ReactElement => {
       <TemperatureCard tempC={props.conditions.tempC} dewpointC={props.conditions.dewpointC}/>
       <HumidityCard relativeHumidity={props.conditions.relativeHumidity}/>
     </div>
-  )
-}
+  );
+};
 
 export default WeatherConditions;

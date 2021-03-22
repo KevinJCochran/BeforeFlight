@@ -48,7 +48,7 @@ const useStyles = makeStyles(theme => ({
       width: '20ch',
     },
   },
-}))
+}));
 
 /*
 * SearchInput renders a search input meant for the top bar of
@@ -68,7 +68,7 @@ const SearchInput = (props: Props) => {
       }}
     >
       <div className={classes.searchIcon}>
-        <SearchIcon />
+        <SearchIcon/>
       </div>
       <InputBase
         placeholder="Press enter to search.."
@@ -80,7 +80,7 @@ const SearchInput = (props: Props) => {
         onChange={(e) => setValue(e.target.value)}
       />
     </form>
-  )
-}
+  );
+};
 
 export default SearchInput;

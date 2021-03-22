@@ -74,21 +74,21 @@ const AirportDetails = (): React.ReactElement => {
   } else if (airport !== undefined && weather !== undefined) {
     content = (
       <>
-        <AirportInfoHeader airport={airport} />
-        <Divider className={classes.dividerRoot} />
+        <AirportInfoHeader airport={airport}/>
+        <Divider className={classes.dividerRoot}/>
 
         <Typography variant='h6'>Available Runways</Typography>
         <div className='available-runways-cards'>
           {airport.runways.map(rwy => <RunwayCard key={rwy.ident} {...rwy} />)}
         </div>
-        <Divider className={classes.dividerRoot} />
+        <Divider className={classes.dividerRoot}/>
 
         <Typography variant='h6'>Current Conditions</Typography>
-        <WeatherConditions conditions={weather.conditions} />
-        <Divider className={classes.dividerRoot} />
+        <WeatherConditions conditions={weather.conditions}/>
+        <Divider className={classes.dividerRoot}/>
 
         <Typography variant='h6'>Cloud Layers</Typography>
-        <CloudCoverage cloudLayers={weather.conditions?.cloudLayers} />
+        <CloudCoverage cloudLayers={weather.conditions?.cloudLayers}/>
       </>
     );
   }
@@ -98,7 +98,7 @@ const AirportDetails = (): React.ReactElement => {
     <PageContainer>
       {content}
     </PageContainer>
-  )
+  );
 };
 
 export default AirportDetails;

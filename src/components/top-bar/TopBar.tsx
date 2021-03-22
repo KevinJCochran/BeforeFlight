@@ -11,7 +11,7 @@ import { useHistory } from 'react-router-dom';
 const useStyles = makeStyles(theme => ({
   // offset will make sure nothing is hidden under the Top Bar
   offset: theme.mixins.toolbar,
-}))
+}));
 
 /*
 * TopBar renders the top navigation bar which contains the search input.
@@ -23,8 +23,8 @@ const TopBar = (): ReactElement => {
   const history = useHistory();
 
   const handleSearchSubmit = (value: string) => {
-    history.push(`/airport/${value}`)
-  }
+    history.push(`/airport/${value}`);
+  };
 
   return (
     <>
@@ -33,13 +33,13 @@ const TopBar = (): ReactElement => {
           <Typography variant='h6'>
             BeforeFlight
           </Typography>
-          <SearchInput onSubmit={handleSearchSubmit} />
+          <SearchInput onSubmit={handleSearchSubmit}/>
         </Toolbar>
       </AppBar>
       {/* Create padding to push content down below Top Bar */}
-      <div className={classes.offset} />
+      <div className={classes.offset}/>
     </>
-  )
-}
+  );
+};
 
 export default TopBar;

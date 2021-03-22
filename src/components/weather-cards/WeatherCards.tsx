@@ -88,7 +88,7 @@ export const TemperatureCard = (props: TemperatureCardProps): React.ReactElement
       <Typography variant='h6'>
         Unknown
       </Typography>
-    )
+    );
   } else {
     content = (
       <>
@@ -102,7 +102,7 @@ export const TemperatureCard = (props: TemperatureCardProps): React.ReactElement
           Dewpoint: {props.dewpointC}&#730;C
         </Typography>
       </>
-    )
+    );
   }
   return (
     <BaseCard title='Temperature' icon={<HotTubIcon/>}>
