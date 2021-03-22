@@ -36,12 +36,22 @@ function Home() {
     return airports.map(a => <AirportCard key={a.code} name={a.name} code={a.code}/>);
   };
 
+  let content;
+
+  if (airportsStatus === Status.loading) {
+    content = <Typography variant='h4'>Loading all airports...</Typography>;
+  } else if (airportsStatus === Status.failed) {
+    content = <Typography variant='h4' color='error'>Failed to load airport directory</Typography>;
+  } else {
+    content = renderList();
+  }
+
   return (
     <PageContainer>
       <Typography variant='h4'>Airport Directory</Typography>
       <Divider className={classes.dividerRoot}/>
       <div className='airport-list-container'>
-        {renderList()}
+        {content}
       </div>
     </PageContainer>
   );

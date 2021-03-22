@@ -22,7 +22,12 @@ const initialState: AirportState = {
 
 // Async actions
 export const fetchAirport = createAsyncThunk('airport/fetchAirport', api.getAirport);
-export const fetchAirportList = createAsyncThunk('airport/fetchAirportList', api.getAirportList);
+export const fetchAirportList = createAsyncThunk('airport/fetchAirportList', () => {
+  // NOTE: Loading data this way is slow! I considered creating a file that
+  //       contains all airports but I did not want to modify the "API"
+  const requests = ['50r', 'egll', 'kaus', 'khou'].map((code) => api.getAirport(code));
+  return Promise.all(requests);
+});
 
 export const airportSlice = createSlice({
   name: 'airport',
