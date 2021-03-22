@@ -64,7 +64,7 @@ const SearchInput = (props: Props) => {
       onSubmit={(e) => {
         // Important to prevent page reload!
         e.preventDefault();
-        props.onSubmit(value);
+        props.onSubmit(value.trim());
       }}
     >
       <div className={classes.searchIcon}>
