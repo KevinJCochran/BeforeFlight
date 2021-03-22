@@ -5,12 +5,13 @@
     flex-wrap: wrap;
 }
 
-.available-runways-cards {
+.airport-details-cards {
     display: flex;
     flex-wrap: wrap;
     margin: 1rem 0;
 }
 
-.available-runways-cards > div {
+.airport-details-cards > div {
     margin-right: 8px;
+    margin-bottom: 8px;
 }

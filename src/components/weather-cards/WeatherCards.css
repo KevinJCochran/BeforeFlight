@@ -1,0 +1,8 @@
+.weather-card-header {
+    display: flex;
+    align-items: center;
+}
+
+.weather-card-header > svg {
+    margin-right: 3px;
+}

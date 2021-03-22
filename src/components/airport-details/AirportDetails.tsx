@@ -7,8 +7,10 @@ import { fetchAirport, Status } from '../../redux/airportSlice';
 
 import './AirportDetails.css';
 import RunwayCard from '../runway-card/RunwayCard';
-import { formatLatLong, getFormattedAddress, getFormattedWinds } from '../../util/airportUtils';
+import { formatLatLong, getFormattedAddress } from '../../util/airportUtils';
 import { fetchWeather } from '../../redux/weatherSlice';
+import { HumidityCard, TemperatureCard, VisibilityCard, WindCard } from '../weather-cards/WeatherCards';
+import CloudLayerCard from '../cloud-layer-card/CloudLayerCard';
 
 const useStyles = makeStyles(() => createStyles({
   dividerRoot: {
@@ -52,7 +54,6 @@ const AirportDetails = (): React.ReactElement => {
 
   return (
     <PageContainer>
-
       {/* Header */}
       <header className='airport-details-header'>
         <div>
@@ -76,25 +77,26 @@ const AirportDetails = (): React.ReactElement => {
 
       {/* Runways */}
       <Typography variant='h6'>Available runways</Typography>
-      <div className='available-runways-cards'>
+      <div className='airport-details-cards'>
         { airport.runways.map(rwy => <RunwayCard key={rwy.ident} {...rwy} />) }
       </div>
       <Divider className={classes.dividerRoot} />
 
       {/* Weather conditions */}
-      <Typography variant='h6'>Current weather conditions</Typography>
-      <Typography variant='body1' paragraph>
-        Wind: {getFormattedWinds(weather.conditions.wind)}
-      </Typography>
-      <Typography variant='body1' paragraph>
-        Visibility: {weather.conditions.visibility.distanceSm} SM
-      </Typography>
-      <Typography variant='body1' paragraph>
-        Temperature: {weather.conditions.tempC}&#730;C (dewpoint: {weather.conditions.dewpointC}&#730;C)
-      </Typography>
-      <Typography variant='body1' paragraph>
-        Humidity: {weather.conditions.relativeHumidity}%
-      </Typography>
+      <Typography variant='h6'>Current conditions</Typography>
+      <div className='airport-details-cards'>
+        <WindCard {...weather.conditions.wind} />
+        <VisibilityCard {...weather.conditions.visibility} />
+        <TemperatureCard tempC={weather.conditions.tempC} dewpointC={weather.conditions.dewpointC} />
+        <HumidityCard relativeHumidity={weather.conditions.relativeHumidity} />
+      </div>
+      <Divider className={classes.dividerRoot} />
+
+      {/* Cloud coverage */}
+      <Typography variant='h6'>Cloud coverage</Typography>
+      <div className='airport-details-cards'>
+        {weather.conditions.cloudLayers.map(c => <CloudLayerCard key={c.altitudeFt} {...c}/>)}
+      </div>
     </PageContainer>
   );
 };
