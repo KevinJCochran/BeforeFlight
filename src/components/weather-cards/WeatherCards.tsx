@@ -6,6 +6,7 @@ import HotTubIcon from '@material-ui/icons/HotTub';
 import InvertColorsIcon from '@material-ui/icons/InvertColors';
 
 import './WeatherCards.css';
+import { getFormattedWinds, nearestCardinalDir } from '../../util/airportUtils';
 
 interface BaseCardProps {
   title: string,
@@ -58,8 +59,8 @@ const BaseCard = (props: BaseCardProps): React.ReactElement => {
 export const WindCard = (props: WindCardProps): React.ReactElement => {
   return (
     <BaseCard title='Winds' icon={<ToysIcon/>}>
-      <Typography variant='h3'>NW</Typography>
-      <Typography variant='subtitle1'>210° @ 6 KTS</Typography>
+      <Typography variant='h3'>{nearestCardinalDir(props.direction)}</Typography>
+      <Typography variant='subtitle1'>{getFormattedWinds({ ...props })}</Typography>
     </BaseCard>
   );
 };
